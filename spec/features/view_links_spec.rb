@@ -1,5 +1,3 @@
-require "model/link"
-
 feature 'Display visited links' do
   scenario 'Use click to view links' do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
