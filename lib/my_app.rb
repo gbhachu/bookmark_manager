@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/model/link'
+require "data_mapper"
+require "dm-postgres-adapter"
 
 
 class BookmarkManager < Sinatra::Base
