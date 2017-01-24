@@ -1,9 +1,9 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
 
-class Tags
+class Tag
   include DataMapper::Resource
 
   property :id,     Serial
-  property :tags,    String
+  property :name,   String
 end

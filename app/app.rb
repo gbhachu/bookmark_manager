@@ -19,8 +19,8 @@ class BookmarkManager < Sinatra::Base
 
   post '/newbookmark' do
     link = Link.new(url: params[:url],title: params[:title])
-    tag  = Tag.first_or_create(name: params[:tags])  # 2. Create a tag for the link
-    link.tags << tag                       # 3. Adding the tag to the link's DataMapper collection.
+    tag  = Tag.first_or_create(name: params[:tags])
+    link.tags << tag
     link.save
     # Link.create(url: params[:url], title: params[:title])
     # Tags.create(tags: params[:tags])
