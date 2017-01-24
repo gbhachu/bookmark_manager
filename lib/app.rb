@@ -1,8 +1,9 @@
 require 'sinatra/base'
+require './app/models/link'
 
 class BookmarkManager < Sinatra::Base
   get '/' do
-    'http://google.com'
+    'Homepage'
   end
 
   # start the server if ruby file executed directly
