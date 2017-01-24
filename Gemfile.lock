@@ -95,6 +95,7 @@ GEM
     rspec-sinatra (0.1.2)
       templater (>= 1.0.0)
     rspec-support (3.5.0)
+    rvm (1.11.3.9)
     sinatra (1.4.7)
       rack (~> 1.5)
       rack-protection (~> 1.4)
@@ -118,6 +119,7 @@ DEPENDENCIES
   dm-postgres-adapter
   rspec
   rspec-sinatra
+  rvm
   sinatra
 
 BUNDLED WITH
