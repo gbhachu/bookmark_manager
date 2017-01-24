@@ -1,7 +1,7 @@
 reset_database
 
-feature 'add links' do
-  scenario 'enter a link and add to database' do
+feature 'Add links' do
+  scenario 'Enter a link and add to database' do
     visit('/new')
     fill_in('title', with: 'BBC')
     fill_in('url', with: 'http://www.bbc.co.uk')
