@@ -6,7 +6,7 @@ feature "adding links to database" do
     click_button 'add'
     visit('/links')
     within 'ul#links' do
-      expect(page).to have_content 'google'
+      expect(page).to have_content 'Makers Academy'
     end
   end
 end
