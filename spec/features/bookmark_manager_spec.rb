@@ -1,4 +1,3 @@
-require 'database_cleaner'
 reset_database
 
 feature 'view links' do

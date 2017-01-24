@@ -1,3 +1,5 @@
+reset_database
+
 feature 'add links' do
   scenario 'enter a link and add to database' do
     visit('/new')
