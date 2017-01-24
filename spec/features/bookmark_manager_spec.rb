@@ -1,3 +1,5 @@
+require 'database_cleaner'
+reset_database
 
 feature 'view links' do
   scenario 'see list of links on the homepage' do
