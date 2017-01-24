@@ -4,6 +4,8 @@ require 'dm-postgres-adapter'
 class Link
   include DataMapper::Resource
 
+  storage_names[:default] = 'link'
+
   has n, :tags, through: Resource
 
   property :id,     Serial

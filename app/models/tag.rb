@@ -6,6 +6,8 @@ class Tag
 
   has n, :links, through: Resource
 
+  storage_names[:default] = 'tag'
+
   property :id,     Serial
   property :name,   String
 end
