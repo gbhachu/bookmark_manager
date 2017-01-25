@@ -19,6 +19,10 @@ class BookmarkManager < Sinatra::Base
     erb :links
   end
 
+  post '/new' do
+    redirect '/new'
+  end
+
   get '/new' do
     erb :new
   end
@@ -52,6 +56,10 @@ class BookmarkManager < Sinatra::Base
       flash.now[:errors] = @user.errors.full_messages
       erb :signup
     end
+  end
+
+  post '/sessions/new' do
+    redirect '/sessions/new'
   end
 
   get '/sessions/new' do
