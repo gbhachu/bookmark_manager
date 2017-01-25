@@ -1,5 +1,5 @@
 <form id="signup" name="signup" method="post" action="/addnewuser">
-  Email: <input type="text" name="email" id="email" value='<%= @user.email %>'><br>
+  Email: <input type="text" name="email" id="email" value='<%= @user.email %>' required><br>
   Password: <input type="password" name="password" id="password"><br>
   Password Confirmation: <input type="password" name="password_confirmation" id="password_confirmation"><br>
   <input type="submit" name="Submit" id="Submit" value="Submit">
