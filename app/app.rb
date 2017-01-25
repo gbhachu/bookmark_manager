@@ -27,11 +27,7 @@ class BookmarkManager < Sinatra::Base
     params[:tags].split.each do |tag|
       link.tags << Tag.first_or_create(name: tag.downcase)
     end
-    # tag  = Tag.first_or_create(name: params[:tags].downcase)
-    # link.tags << tag
     link.save
-    # Link.create(url: params[:url], title: params[:title])
-    # Tags.create(tags: params[:tags])
     redirect '/links'
   end
 
@@ -54,6 +50,21 @@ class BookmarkManager < Sinatra::Base
     else
       flash.now[:errors] = @user.errors.full_messages
       erb :signup
+    end
+  end
+
+  get '/sessions/new' do
+    erb :'sessions/new'
+  end
+
+  post '/sessions' do
+    user = User.authenticate(params[:email], params[:password])
+    if user
+      session[:user_id] = user.id
+      redirect to('/links')
+    else
+      flash.now[:errors] = ['The email or password is incorrect']
+      erb :'sessions/new'
     end
   end
 

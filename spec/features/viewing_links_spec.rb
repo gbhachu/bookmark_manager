@@ -1,4 +1,8 @@
-feature 'Viewing links' do
+# As a time-pressed user
+# So that I can organise my own bookmarks
+# I would like to filter links by tags
+
+feature 'Viewing links:' do
   before(:each) do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy', tags: [Tag.first_or_create(name: 'education')])
     Link.create(url: 'http://www.google.com', title: 'Google', tags: [Tag.first_or_create(name: 'search')])
@@ -8,7 +12,6 @@ feature 'Viewing links' do
 
   scenario 'I can filter links by tag' do
     visit '/tags/bubbles'
-
     expect(page.status_code).to eq(200)
     expect(page).not_to have_content('Makers Academy')
     expect(page).not_to have_content('Code.org')
