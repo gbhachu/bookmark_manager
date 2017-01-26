@@ -12,9 +12,9 @@ feature 'Resetting Password' do
 
  scenario 'assigned a reset token to the user when they recover' do
     sign_up
-    p User.all
+
     expect{recover_password}.to change{User.first.password_token}
-    p User.first
-    expect(page).to have_content "Thanks, Please check your inbox for the link."
+
+    
   end
 end

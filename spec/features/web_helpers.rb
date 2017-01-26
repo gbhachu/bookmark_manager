@@ -41,6 +41,6 @@ end
 
 def recover_password
     visit '/users/recover'
-    fill_in :email, with: "alice@example.com"
+    fill_in :email, with: "newuser@abcd.com"
     click_button "Submit"
   end

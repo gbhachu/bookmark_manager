@@ -17,6 +17,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/users/recover' do
+    "Please enter your email address"
     erb :'users/recover'
   end
 
