@@ -1,6 +1,7 @@
 require 'data_mapper'
 require 'dm-postgres-adapter'
 require 'bcrypt'
+require 'securerandom'
 
 class User
 
@@ -11,8 +12,8 @@ class User
 
   property :id,               Serial
   property :email,            String, format: :email_address, required: true, unique: true
-  #property :email, String, required: true, unique: true
   property :password_digest,  Text
+  property :password_token, String, length: 60
 
   validates_confirmation_of :password
   validates_presence_of :email
@@ -30,5 +31,10 @@ class User
     else
       nil
     end
+  end
+
+  def generate_token
+    self.password_token = SecureRandom.hex
+    self.save
   end
 end

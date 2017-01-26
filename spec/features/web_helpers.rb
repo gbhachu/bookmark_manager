@@ -11,7 +11,7 @@ require 'database_cleaner'
    end
 
    config.after(:each) do
-     DatabaseCleaner.clean
+    DatabaseCleaner.clean
    end
  end
 
@@ -38,3 +38,9 @@ def sign_in(email: 'newuser@abcd.com', password: '12345678')
   fill_in :password, with: password
   click_button 'Submit'
 end
+
+def recover_password
+    visit '/users/recover'
+    fill_in :email, with: "alice@example.com"
+    click_button "Submit"
+  end
